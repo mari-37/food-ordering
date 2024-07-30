@@ -1,8 +1,21 @@
-const parent = React.createElement("div", { id:parent }, [
-    React.createElement("h1",{},"h1 tag from child 1"),
-    React.createElement("h2",{},"h2 tag from child 1"),
-    React.createElement("h3",{},"h3 tag from child 1"),
-]);
+
+const Heading1 = () => (
+    <h1>H1 TAG BY FUNCTIONAL COMPONENT</h1>   
+) ;
+
+
+const heading2 = <h1>H1 TAG BY JSX</h1> ;
+
+
+const heading3 = (
+    <div id="heading">
+       <h1>H1 TAG BY REACT ELEMENT</h1>
+       <Heading1/>
+       {heading2}
+    </div>
+) ;
+
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(parent);
+root.render(heading3);
