@@ -108,5 +108,22 @@
 
   - call other components from a component (nested component)
 
+# props
+    - it is like argument
+    - react bundles object in component ans passed to functional component as props
+
+# configure driven ui
+     - Config-driven UI is a technique that allows you to create dynamic and customizable UIs without hard coding them. 
+
+# key in map
+     - on using map function key must be used
+     - coz when new items are added react got confused which properties belongs to which component
+     - not using key <<<<< index <<<<< id 
+
+# optional chaining ?.
+     -The optional chaining (?.) operator accesses an object's property or calls a function. If the object accessed or function called using this operator is undefined or null, the expression short circuits and evaluates to undefined instead of throwing an error.
+
+
+
 
 
