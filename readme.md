@@ -129,20 +129,68 @@
 
 
 # hooks
-
-
-# local state variable
-
+     -normal javascript function
+     -Hooks allow function components to have access to state and other React features. Because of this, class components are generally no longer needed.
 
 # usestate()
+      -const [state, setState] = useState(initialState)
+      -The React useState Hook allows us to track state in a function component.
+      -State generally refers to data or properties that need to be tracking in an application.
 
+# react fiber
+      -React Fiber is an internal engine change geared to make React faster and smarter. The Fiber reconciler, which became the default reconciler for React 16 and above, is a complete rewrite of React’s reconciliation algorithm to solve some long-standing issues in React.
 
-# react fibre
+      - Because Fiber is asynchronous, React can:
 
+       * Pause, resume, and restart rendering work on components as new updates come in
+       * Reuse previously completed work and even abort it if not needed
+       * Split work into chunks and prioritize tasks based on importance
+
+# reconciliation
+        -The algorithm React uses to diff one tree with another to determine which parts need to be changed.
+        -React uses a technique called reconciliation to determine which components need to be updated when the state of the variable changes.
 
 # diff algorithm
+        -The diff algorithm is a technique used by React to determine which components need to be updated when  state changes
+        -Diffing short for Differences Algorithm is used to differentiate the DOM Tree for efficient updates. React utilize diffing algorithm to identify the changes in the newly created virtual dom and previous version of dom after any changes are made.
 
 
+# useEffect
+        -The useEffect Hook allows you to perform side effects in your components.
 
+        -Some examples of side effects are: fetching data, directly updating the DOM, and timers.
+
+        -useEffect accepts two arguments. The second argument is optional.
+
+        -useEffect(<function>, <dependency>)
+
+      *  useEffect(() => {
+        //Runs on every render
+        });
+
+      *  useEffect(() => {
+         //Runs only on the first render
+        }, []);
+
+      *  useEffect(() => {
+         //Runs on the first render
+         //And any time any dependency value changes
+        }, [prop, state]);
+
+
+# corcs
+        -CORS defines a way for client web applications that are loaded in one domain to interact with resources in a different domain.
+
+        -CORS allows resource requests from different origins, bypassing the Same Origin Policy.
+
+
+# * whenever state variable changes react will rerender the component
+
+
+# two types to load web
+    - loads => api => render
+    - loads => render => api => reRender   (it is best for user experience)
+
+# * whenever writes on search text it will reRender the body component again  🤯
 
 

@@ -1,8 +1,12 @@
 import React from "react";
 import { COMPANY_LOGO_URL } from "../utils/constants" ;
 import { LOGIN_LOGO_URL} from "../utils/constants" ;
+import { useState } from "react";
 
 const Header = () => {
+
+const [loginBtn,SetloginBtn] = useState("LOGIN") ;
+
     return(
         <div className="header">
           <div className="logo-container">
@@ -15,11 +19,15 @@ const Header = () => {
                  <li>➜ ABOUT US</li>
                  <li>🛒 CART</li>
                  <li> 
-                     <img
-                      className="login-logo"
-                      src={LOGIN_LOGO_URL}
-                     />
-                       LOGIN
+                    <button  onClick={()=>{
+                      return (loginBtn === "LOGIN" ? SetloginBtn("LOGOUT") : SetloginBtn("LOGIN") );
+                    }}  >
+                       <img
+                        className="login-logo"
+                        src={LOGIN_LOGO_URL}
+                      />
+                      {loginBtn}
+                     </button>   
                  </li>
                  <li>💁HELP</li>
               </ul>
