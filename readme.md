@@ -194,3 +194,29 @@
 # * whenever writes on search text it will reRender the body component again  🤯
 
 
+# createBrowserRouter
+
+
+# routerProvider
+
+
+# Outlet
+
+
+# Link
+
+
+# useParams
+
+
+# useRouterError
+
+
+# 2 types of routing
+   1.serverSide routing
+   2.clientSide routing
+
+
+
+
+

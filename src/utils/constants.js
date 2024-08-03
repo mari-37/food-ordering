@@ -3,3 +3,7 @@ export const COMPANY_LOGO_URL = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA
 export const RES_LOGO_URL = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" ;
 
 export const LOGIN_LOGO_URL = "https://cdn4.iconfinder.com/data/icons/man-user-human-person-business-avatar-profile/100/19B-1User-128.png" ;
+
+export const MENU_API_URL ="https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=11.01420&lng=76.99410&restaurantId=" ;
+
+export const SWIGGY_API_URL ="https://www.swiggy.com/dapi/restaurants/list/v5?lat=10.4500374&lng=77.5161356&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING" ;

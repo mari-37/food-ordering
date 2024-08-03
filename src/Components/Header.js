@@ -2,6 +2,7 @@ import React from "react";
 import { COMPANY_LOGO_URL } from "../utils/constants" ;
 import { LOGIN_LOGO_URL} from "../utils/constants" ;
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
 
@@ -15,8 +16,8 @@ const [loginBtn,SetloginBtn] = useState("LOGIN") ;
 
           <div className="nav-items">
               <ul>
-                 <li>🏠 HOME </li>   
-                 <li>➜ ABOUT US</li>
+                 <li> <Link to= "/"> 🏠 HOME </Link>  </li>   
+                 <li> <Link to= "/About">➜ ABOUT US</Link> </li>
                  <li>🛒 CART</li>
                  <li> 
                     <button  onClick={()=>{
@@ -29,7 +30,7 @@ const [loginBtn,SetloginBtn] = useState("LOGIN") ;
                       {loginBtn}
                      </button>   
                  </li>
-                 <li>💁HELP</li>
+                 <li> <Link to= "/Help"> 💁HELP</Link></li>
               </ul>
           </div>
 

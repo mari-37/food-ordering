@@ -2,6 +2,8 @@ import React from "react";
 import ResCard from "./ResCard";
 import { useState,useEffect } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
+import { SWIGGY_API_URL } from "../utils/constants";
 
 
 const Body = () => {
@@ -14,7 +16,7 @@ useEffect(()=> {
 },[]) ;
 
  const fetchData = async () =>{
-   const data = await fetch ("https://www.swiggy.com/dapi/restaurants/list/v5?lat=11.01420&lng=76.99410&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING") ;
+   const data = await fetch (SWIGGY_API_URL) ;
    const json = await data.json() ;
    SetlistOfRes(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants) ;
    SetfilterRes(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants) ;
@@ -31,7 +33,7 @@ if(listOfRes?.length===0){
         <div className="search">  
           <input className="search-bar" value={searchRes} onChange={(e)=>{SetsearchRes(e.target.value)}} type="search"/>
           <button className="search-button" onClick={()=>{
-            const filterRes=listOfRes.filter((res)=>
+            const filterRes=listOfRes?.filter((res)=>
             res?.info?.name?.toLowerCase().includes(searchRes.toLowerCase()));
             SetfilterRes(filterRes);
             }}
@@ -41,14 +43,14 @@ if(listOfRes?.length===0){
 
               <button className="filter-btn" onClick={ ()=>{
                 const  filteredRes = listOfRes?.filter((res) => res.info.avgRating >4  ) ;
-                  SetlistOfRes(filteredRes) ;
+                  SetfilterRes(filteredRes) ;
                   }}>
                 TOP RATED RESTAURANT
               </button>
          
            <div className="res-container">
             {filterRes?.map((res) => (
-             <ResCard key={res?.info?.id} resData={res} /> 
+             <Link key={res?.info?.id} to={"/restaurants/" + res?.info?.id} ><ResCard  resData={res} /> </Link>
             ))}           
            </div>   
         </div>
