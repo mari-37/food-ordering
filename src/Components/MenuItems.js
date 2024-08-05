@@ -29,7 +29,7 @@ const {resId} = useParams();
             <h2>MenuItems</h2>
             <ul>
             
-                { itemCards.map((items)=><li key={items?.card?.info?.id}>{items?.card?.info?.name} - {items?.card?.info?.defaultPrice/100 || items?.card?.info?.finalPrice/100 || items?.card?.info?.price/100 }</li>)}
+                { itemCards?.map((items)=><li key={items?.card?.info?.id}>{items?.card?.info?.name} - {items?.card?.info?.defaultPrice/100 || items?.card?.info?.finalPrice/100 || items?.card?.info?.price/100 }</li>)}
 
             </ul>
             

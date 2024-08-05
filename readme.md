@@ -154,7 +154,6 @@
         -The diff algorithm is a technique used by React to determine which components need to be updated when  state changes
         -Diffing short for Differences Algorithm is used to differentiate the DOM Tree for efficient updates. React utilize diffing algorithm to identify the changes in the newly created virtual dom and previous version of dom after any changes are made.
 
-
 # useEffect
         -The useEffect Hook allows you to perform side effects in your components.
 
@@ -170,6 +169,9 @@
 
       *  useEffect(() => {
          //Runs only on the first render
+         return()=>{
+          // code after page leaves (clean)
+         }
         }, []);
 
       *  useEffect(() => {
@@ -177,15 +179,17 @@
          //And any time any dependency value changes
         }, [prop, state]);
 
+# async can't be used in useEffect 
+-You can't use async/await directly inside the useEffect callback. 
+-async function returns promise and the useEffect doesn't expect callback function to return promise. It should return nothing or a function.
+-we can use inside useEffect
 
 # corcs
         -CORS defines a way for client web applications that are loaded in one domain to interact with resources in a different domain.
 
         -CORS allows resource requests from different origins, bypassing the Same Origin Policy.
 
-
 # * whenever state variable changes react will rerender the component
-
 
 # two types to load web
     - loads => api => render
@@ -193,30 +197,84 @@
 
 # * whenever writes on search text it will reRender the body component again  🤯
 
+#  * we couldn't update the state directly
 
 # createBrowserRouter
-
+     -createBrowserRouter is a function provided by react-router-dom that creates a router instance for client-side
 
 # routerProvider
-
+     -The RouterProvider in React Router is similar to the traffic controller of our React apps. It helps us monitor how users move between pages and objects in a single-page application (SPA). Essentially, it’s the backbone of React Router, handling all the routing magic behind the scenes.
 
 # Outlet
-
+     - Outlet is a component provided by react-router-dom that renders the current route's component.
+     -React Outlet is used within the AllRoutes component to render child routes within a parent route. It allows for the modularization of routes, making it easier to manage complex navigation structures. Nested routes can have their own layouts and functionality while still being part of a larger parent route.
 
 # Link
-
-
-# useParams
-
+- Link is a component provided by react-router-dom that creates a link to a route.
+- Link is used to navigate between routes in a React application.
+- it doesn't reload the page
+- it use <a>
 
 # useRouterError
+- Inside of an errorElement, this hook returns anything thrown during an action, loader, or rendering. 
 
+# useParams
+-React JS useParams Hook helps to access the parameters of the current route to manage the dynamic routes in the URL. The react-router-dom package has useParams hooks that let you access and use the parameters of the current route as required.
 
 # 2 types of routing
    1.serverSide routing
    2.clientSide routing
 
+# lazy loading
+    - lazy loading is a technique to load the component only when it is needed
+    - another names : chunking , code splitting , dynamic bundling , on demand loading , dynamic import
+    - const x = lazy(()=>import("path")) ;
+    - lazy loading is used to improve the performance of the application
+
+# react class component life cycle
+     - Parent constructor
+     - Parent render
+
+        - FirstChild constructor
+        - FirstChild render
+
+        - SecondChild constructor
+        - SecondChild render
+
+        - Firstchild componentDidMount
+        - SecondChild componentDidMount
+
+      - Parent componentDidMount
+
+# TWO PHASES 
+    1.RENDER PHASE
+    2.COMMIT PHASE
+
+ # MOUNTING 
+ - mounting is the process of creating a component in the DOM
+ - mounting is the first phase of the component life cycle
+     * constructor(dummy)
+     * render(dummy)
+     *<HTML Dummy>
+     * component did mount
+     *api call
+     * <this.setState> state update
 
 
+# UPDATE 
+- update is the process of updating the component in the DOM
+ - update is the second phase of the component life cycle
+        * reRender(api data)
+        * <HTML (new api data)>
+        * component did update
 
+# COMPONENT DID MOUNT
+- this method is called after the component is rendered to the DOM (api call) [in useEffect 1st parameter]
 
+# COMPONENT DID UPDATE
+- this method is called after the component is updated in the DOM [in useEffect 2nd parameter]
+
+# COMPONENT DID UNMOUNT
+- this method is called after the page leaves
+- this method is called after the component is removed from the DOM
+- this is used to clean

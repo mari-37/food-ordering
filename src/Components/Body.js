@@ -4,6 +4,7 @@ import { useState,useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import { SWIGGY_API_URL } from "../utils/constants";
+import  useOnlineStatus  from "../utils/useOnlineStatus" ;
 
 
 const Body = () => {
@@ -22,6 +23,11 @@ useEffect(()=> {
    SetfilterRes(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants) ;
    console.log(json) ;
 } ;
+
+const OnlineStatus = useOnlineStatus() ;
+
+if(OnlineStatus===false) return <h1>its look like you offline.   plz check ur network connections </h1>
+
 
 if(listOfRes?.length===0){
   return <Shimmer /> ;
