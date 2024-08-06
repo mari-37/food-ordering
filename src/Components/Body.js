@@ -48,7 +48,7 @@ if(listOfRes?.length===0){
         </div>
 
               <button className="filter-btn" onClick={ ()=>{
-                const  filteredRes = listOfRes?.filter((res) => res.info.avgRating >4  ) ;
+                const  filteredRes = listOfRes?.filter((res) => res.info.avgRating >=4.5  ) ;
                   SetfilterRes(filteredRes) ;
                   }}>
                 TOP RATED RESTAURANT

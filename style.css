@@ -75,3 +75,24 @@
     width: 200px;
 }
 
+.res-item-head{
+    text-align: center;
+}
+
+.menu-items{
+    text-align: center;
+    width: 300px;
+    margin: auto;
+    
+}
+
+.item-head{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(247, 241, 241, 0.667);
+    
+}
+
+.res-item-head{
+    cursor: pointer;
+}

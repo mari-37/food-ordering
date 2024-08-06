@@ -7,3 +7,5 @@ export const LOGIN_LOGO_URL = "https://cdn4.iconfinder.com/data/icons/man-user-h
 export const MENU_API_URL ="https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=11.01420&lng=76.99410&restaurantId=" ;
 
 export const SWIGGY_API_URL ="https://www.swiggy.com/dapi/restaurants/list/v5?lat=10.4500374&lng=77.5161356&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING" ;
+
+export const ITEM_LOGO_URL ="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/" ;
