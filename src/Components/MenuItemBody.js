@@ -1,7 +1,14 @@
 import React from "react";
 import ITEM_LOGO_URL from "../utils/constants"
+import { useDispatch } from "react-redux";
+import { addItem } from "../utils/cartSlice";
+
 
 const MenuItemBody = ({items}) =>{
+  const dispatch = useDispatch() ;
+  const handleAddItem = (items) => {
+    dispatch(addItem(items));
+  };
     return (
         <div className="menu-item-body">
           {items.map((items)=>(
@@ -10,7 +17,7 @@ const MenuItemBody = ({items}) =>{
               <div>
                 <span>{items?.card?.info?.name} - Rs.</span>
                 <span>{items?.card?.info?.price/100}</span> 
-                <span><button>ADD</button></span>                     
+                <span><button onClick={()=> handleAddItem(items)}>ADD</button></span>                     
                </div>
                <p>{items?.card?.info?.description}</p> 
             </div>

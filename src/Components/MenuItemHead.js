@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import MenuItemBody from "./MenuItemBody";
 
-const MenuItemHead = (props) =>{
-const {data} = props ;
+const MenuItemHead = ({data}) =>{
+
 const [showItems,setshowItems] = useState(false) ;
      
     return (

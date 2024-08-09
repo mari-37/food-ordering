@@ -4,9 +4,11 @@ import { LOGIN_LOGO_URL} from "../utils/constants" ;
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import  useOnlineStatus  from "../utils/useOnlineStatus" ;
+import { useSelector } from "react-redux";
 
 const Header = () => {
 
+const cartItems = useSelector((store)=>store.cart.items) ;
 const onlineStatus = useOnlineStatus() ;
 const [loginBtn,SetloginBtn] = useState("LOGIN") ;
 
@@ -21,7 +23,7 @@ const [loginBtn,SetloginBtn] = useState("LOGIN") ;
                  <li> ONLINE STATUS 🕵️ : { onlineStatus ? "🟢" : "🔴" }</li>
                  <li> <Link to= "/"> 🏠 HOME </Link>  </li>   
                  <li> <Link to= "/About">➜ ABOUT US</Link> </li>
-                 <li>🛒 CART</li>
+                 <li> <Link to= "/cart">🛒 CART - ({cartItems.length}items)</Link> </li>
                  <li> 
                     <button  onClick={()=>{
                       return (loginBtn === "LOGIN" ? SetloginBtn("LOGOUT") : SetloginBtn("LOGIN") );
